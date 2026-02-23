@@ -1,6 +1,8 @@
 #ifndef _DHT_COMM_H
 #define _DHT_COMM_H
 
+#include <stdint.h>
+
 #define DHT_MAX_TIME 5  //max message time in ms
 #define DHT_BIT_QTY 40 // message bit quantity
 #define dht_clock (uint32_t)TMR3 << 16 | TMR2  //timer2 32bit clock 1:1

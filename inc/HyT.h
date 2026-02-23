@@ -1,6 +1,8 @@
 #ifndef _HyT_H_
 #define _HyT_H_
 
+#include <stdint.h>
+
 extern uint32_t HyT_lastTime;
 
 extern float Humidity;

@@ -1,5 +1,7 @@
 #include "inc/dht_comm.h"
 #include "inc/gpio.h"
+#include "inc/pins.h"
+#include "inc/system.h"
 #include "inc/systemTimer.h"
 
 union W64Bits dht_shift;
