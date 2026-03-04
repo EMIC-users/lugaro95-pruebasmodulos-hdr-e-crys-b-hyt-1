@@ -18,6 +18,7 @@
 int main(void)
 {
 	initSystem();
+	SystemConfig();
 	systemTimeInit();
 	LEDs_Led1_init();
 	LEDs_Led2_init();

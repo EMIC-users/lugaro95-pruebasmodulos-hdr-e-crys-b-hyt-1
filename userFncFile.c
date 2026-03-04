@@ -13,6 +13,12 @@
 #include "inc/dht_comm.h"
 #include "inc/HyT.h"
 
+void SystemConfig()
+{
+    My_ID = 2;
+}
+
+
 void onReset()
 {
     LEDs_Led1_blink(125, 250, 3);

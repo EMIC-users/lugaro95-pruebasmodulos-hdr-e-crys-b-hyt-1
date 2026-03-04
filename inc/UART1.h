@@ -66,4 +66,5 @@ extern const streamOut_t streamOut_Uart1;
 
 /*==================[external functions definition]==========================*/
 
+extern void ISR_UART1_CALLBACK(char d);
 #endif 

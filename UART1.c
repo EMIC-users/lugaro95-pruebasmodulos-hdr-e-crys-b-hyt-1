@@ -224,6 +224,7 @@ void __attribute__((interrupt(auto_psv))) _U1RXInterrupt( void )
 	while (U1STAbits.URXDA)	    //While there is still data in the register
 	{
 		d = U1RXREG ;  
+        ISR_UART1_CALLBACK(d);
 	return;
 	}
 }

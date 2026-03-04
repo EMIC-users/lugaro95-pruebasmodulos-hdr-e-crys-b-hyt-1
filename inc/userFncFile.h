@@ -12,6 +12,7 @@
 #include "streamOut.h"
 
 /* Function Prototypes */
+void SystemConfig();
 void onReset();
 void etOut1();
 void emicFBe(char* TAG, const streamIn_t* const Message);
