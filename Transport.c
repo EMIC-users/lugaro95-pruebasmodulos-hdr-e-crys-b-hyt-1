@@ -56,11 +56,25 @@ uint8_t My_ID;
 // UART RX callback: pushes received bytes to FIFO and detects frames
 void ISR_UART1_CALLBACK(char d)
 {
-	UART1_push(&UART1_IN_fifo, d);
-	if (d == FrameLf)
-	{
-		Transport_frame_count++;
-	}
+    UART1_push(&UART1_IN_fifo, d);
+
+    if (d == (char)FrameLf)
+    {
+        Transport_frame_count++;
+    }
+}
+
+void discard_current_frame(void)
+{
+    uint8_t d;
+
+    while(UART1_IN_count())
+    {
+        d = UART1_IN_pop();
+
+        if (d == FrameLf)
+            break;
+    }
 }
 
 void init_EMICfb ()
@@ -76,70 +90,78 @@ void init_EMICfb ()
 
 void poll_fieldBusTransport()
 {
-	if (Transport_frame_count > 0)
-	{
-		Transport_frame_count--;
-		uint8_t data = UART1_IN_pop();
+    if (Transport_frame_count > 0)
+    {
+        Transport_frame_count--;
 
-		if(data==0) 						//If  1st data is zero, second must be my ID for me to talk, else is not my turn yet
-		{
+        if(!UART1_IN_count()) return;
+
+        uint8_t data = UART1_IN_pop();
+
+        if(data == 0)
+        {
             if(UART1_IN_count())
             {
                 data = UART1_IN_pop();
+
                 if (data == My_ID)
                 {
+                	discard_current_frame();   // <-- CAMBIO
                     if (fieldBusOutStream.frame_count > 0)
                     {
-                    	send_fbTransport();
+                        send_fbTransport();
                     }
                     else
                     {
-                    	UART1_OUT_push(My_ID);
-                    	UART1_OUT_push(FrameLf);
+                        UART1_OUT_push(My_ID);
+                        UART1_OUT_push(FrameLf);
                     }
                 }
-				empty_buffer();
             }
-			return;
-		}
-		received_ID = data;
+            return;
+        }
 
-		if (received_ID == My_ID)			//If first data is my ID, discard message
-		{
-			empty_buffer();
-			return;
-		}
-		while(UART1_IN_count()) //else store the message on internal buffer (sends from UART to IN buffer)
-		{
-			data = UART1_IN_pop();
-			//if (data == FrameLf) break;
-			streamPush(&fieldBusInStream, data);
-		}
-		if (fieldBusInStream.data_count_entr)
-		{
-			streamOpenWriteFrame(&fieldBusInStream);
-		}
-	}
+        received_ID = data;
+
+        if (received_ID == My_ID)
+        {
+            discard_current_frame();       // <-- CAMBIO
+            return;
+        }
+
+        // Leer SOLO hasta LF
+        while(UART1_IN_count())
+        {
+            data = UART1_IN_pop();
+
+            if (data == FrameLf)
+                break;
+
+            streamPush(&fieldBusInStream, data);
+        }
+
+        if (fieldBusInStream.data_count_entr)
+        {
+            streamOpenWriteFrame(&fieldBusInStream);
+        }
+    }
 }
 
-void send_fbTransport(void)				//sends from OUT buffer to UART
+void send_fbTransport(void)
 {
-	uint8_t data;
-	UART1_OUT_push(My_ID);
-	streamOpenReadFrame(&fieldBusOutStream);
-	while (fieldBusOutStream.data_count_sal !=0 && data != FrameLf)
-	{
-		data = streamPop(&fieldBusOutStream);
-		UART1_OUT_push(data);
-	}
-	if(data != FrameLf)
+    uint8_t data;
+
+    UART1_OUT_push(My_ID);
+
+    streamOpenReadFrame(&fieldBusOutStream);
+
+    while (fieldBusOutStream.data_count_sal != 0)
     {
-        UART1_OUT_push(FrameLf);
+        data = streamPop(&fieldBusOutStream);
+        UART1_OUT_push(data);
     }
-	while(fieldBusOutStream.data_count_sal != 0)
-    {
-        streamPop(&fieldBusOutStream);
-    }
+
+    UART1_OUT_push(FrameLf);
 }
 
 void empty_buffer(void)   //empty UART buffer

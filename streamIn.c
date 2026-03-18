@@ -217,7 +217,7 @@ void sendDataToStream(const streamOut_t* stream, char* format_, va_list arg)
                             case 8:
                             case 16:
                             {
-                                unsigned int val = va_arg(arg, int); // promoci�n
+                                unsigned int val = va_arg(arg, unsigned int); // promoci�n
                                 snprintf(auxStr, sizeof(auxStr), strFormat, val);
                                 break;
                             }

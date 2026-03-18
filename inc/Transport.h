@@ -4,7 +4,7 @@
 #include <xc.h>
 #include "stream.h"
 
-#define		SENSOR_TIMEOUT	50
+#define		SENSOR_TIMEOUT	500
 #define		FrameLf		'\n'
 #define     BufferSize      1024
 #define     FrameQty        16
