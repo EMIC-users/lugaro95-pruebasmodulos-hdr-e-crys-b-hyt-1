@@ -241,11 +241,11 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200              0x4094          0x60de  (24798)
 .const                      0x4294                0x30            0x48  (72)
-.text                       0x42c4               0xc70          0x12a8  (4776)
-.dinit                      0x4f34                0xf0           0x168  (360)
-.text                       0x5024               0x44a           0x66f  (1647)
+.text                       0x42c4               0xc88          0x12cc  (4812)
+.dinit                      0x4f4c                0xf0           0x168  (360)
+.text                       0x503c               0x44a           0x66f  (1647)
 
-                 Total "program" memory used (bytes):         0x7ba5  (31653) 48%
+                 Total "program" memory used (bytes):         0x7bc9  (31689) 48%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x2000]
@@ -497,58 +497,59 @@ External Symbols in Program Memory (by address):
                   0x004d3c                  _dht_poll
                   0x004ddc                  _dht_diffTime
                   0x004e3c                  _ISR_UART1_CALLBACK
-                  0x004e56                  _init_EMICfb
-                  0x004e68                  _poll_fieldBusTransport
-                  0x004ee2                  _send_fbTransport
-                  0x004f22                  _empty_buffer
-                  0x005024                  _poll_HyT
-                  0x0050a2                  _HyT_checksum
-                  0x0050dc                  _HyT_getTemp
-                  0x0050f4                  _HyT_getHum
-                  0x00510c                  _emicFBp
-                  0x005124                  _poll_EMICfb
-                  0x005178                  _getBusStreamIn
-                  0x005182                  _countBusStreamIn
-                  0x00518a                  _setBusStreamOut
-                  0x00519a                  _countBusStreamOut
-                  0x0051a2                  _LEDs_Led1_init
-                  0x0051aa                  _LEDs_Led1_blink
-                  0x0051ca                  _LEDs_Led1_poll
-                  0x005228                  _LEDs_Led2_init
-                  0x005230                  _LEDs_Led2_blink
-                  0x005250                  _LEDs_Led2_poll
-                  0x0052ae                  _LEDs_Led3_init
-                  0x0052b6                  _LEDs_Led3_blink
-                  0x0052d6                  _LEDs_Led3_poll
-                  0x005334                  _SystemConfig
-                  0x00533e                  _onReset
-                  0x005364                  _etOut1
-                  0x00538a                  _emicFBe
-                  0x0053a4                  _setTime1
-                  0x0053c0                  _timer1_Poll
-                  0x0053fe                  _initSystem
-                  0x00540c                  _main
-                  0x005432                  _getSystemMilis
-                  0x00543c                  _callback
-                  0x00544e                  _systemTimeInit
-                  0x005458                  _timer4_init
+                  0x004e56                  _discard_current_frame
+                  0x004e72                  _init_EMICfb
+                  0x004e84                  _poll_fieldBusTransport
+                  0x004f16                  _send_fbTransport
+                  0x004f3a                  _empty_buffer
+                  0x00503c                  _poll_HyT
+                  0x0050ba                  _HyT_checksum
+                  0x0050f4                  _HyT_getTemp
+                  0x00510c                  _HyT_getHum
+                  0x005124                  _emicFBp
+                  0x00513c                  _poll_EMICfb
+                  0x005190                  _getBusStreamIn
+                  0x00519a                  _countBusStreamIn
+                  0x0051a2                  _setBusStreamOut
+                  0x0051b2                  _countBusStreamOut
+                  0x0051ba                  _LEDs_Led1_init
+                  0x0051c2                  _LEDs_Led1_blink
+                  0x0051e2                  _LEDs_Led1_poll
+                  0x005240                  _LEDs_Led2_init
+                  0x005248                  _LEDs_Led2_blink
+                  0x005268                  _LEDs_Led2_poll
+                  0x0052c6                  _LEDs_Led3_init
+                  0x0052ce                  _LEDs_Led3_blink
+                  0x0052ee                  _LEDs_Led3_poll
+                  0x00534c                  _SystemConfig
+                  0x005356                  _onReset
+                  0x00537c                  _etOut1
+                  0x0053a2                  _emicFBe
+                  0x0053bc                  _setTime1
+                  0x0053d8                  _timer1_Poll
+                  0x005416                  _initSystem
+                  0x005424                  _main
+                  0x00544a                  _getSystemMilis
+                  0x005454                  _callback
+                  0x005466                  _systemTimeInit
+                  0x005470                  _timer4_init
 
 External Symbols in Program Memory (by name):
 
-                  0x0050a2                  _HyT_checksum
-                  0x0050f4                  _HyT_getHum
-                  0x0050dc                  _HyT_getTemp
+                  0x0050ba                  _HyT_checksum
+                  0x00510c                  _HyT_getHum
+                  0x0050f4                  _HyT_getTemp
                   0x004e3c                  _ISR_UART1_CALLBACK
-                  0x0051aa                  _LEDs_Led1_blink
-                  0x0051a2                  _LEDs_Led1_init
-                  0x0051ca                  _LEDs_Led1_poll
-                  0x005230                  _LEDs_Led2_blink
-                  0x005228                  _LEDs_Led2_init
-                  0x005250                  _LEDs_Led2_poll
-                  0x0052b6                  _LEDs_Led3_blink
-                  0x0052ae                  _LEDs_Led3_init
-                  0x0052d6                  _LEDs_Led3_poll
-                  0x005334                  _SystemConfig
+                  0x0051c2                  _LEDs_Led1_blink
+                  0x0051ba                  _LEDs_Led1_init
+                  0x0051e2                  _LEDs_Led1_poll
+                  0x005248                  _LEDs_Led2_blink
+                  0x005240                  _LEDs_Led2_init
+                  0x005268                  _LEDs_Led2_poll
+                  0x0052ce                  _LEDs_Led3_blink
+                  0x0052c6                  _LEDs_Led3_init
+                  0x0052ee                  _LEDs_Led3_poll
+                  0x00534c                  _SystemConfig
                   0x004b02                  _UART1_IN_count
                   0x004af8                  _UART1_IN_pop
                   0x004ad4                  _UART1_OFF
@@ -664,38 +665,39 @@ External Symbols in Program Memory (by name):
                   0x000760                  _atoi
                   0x0007c0                  _atol
                   0x000828                  _atoll
-                  0x00543c                  _callback
+                  0x005454                  _callback
                   0x003d70                  _copysignl
-                  0x005182                  _countBusStreamIn
-                  0x00519a                  _countBusStreamOut
+                  0x00519a                  _countBusStreamIn
+                  0x0051b2                  _countBusStreamOut
                   0x004ddc                  _dht_diffTime
                   0x004cb4                  _dht_init
                   0x004d3c                  _dht_poll
                   0x004d02                  _dht_start
-                  0x00538a                  _emicFBe
-                  0x00510c                  _emicFBp
-                  0x004f22                  _empty_buffer
-                  0x005364                  _etOut1
+                  0x004e56                  _discard_current_frame
+                  0x0053a2                  _emicFBe
+                  0x005124                  _emicFBp
+                  0x004f3a                  _empty_buffer
+                  0x00537c                  _etOut1
                   0x003da4                  _fabsl
                   0x003dba                  _floorl
                   0x003eb4                  _fmodl
-                  0x005178                  _getBusStreamIn
-                  0x005432                  _getSystemMilis
-                  0x0053fe                  _initSystem
-                  0x004e56                  _init_EMICfb
-                  0x00540c                  _main
+                  0x005190                  _getBusStreamIn
+                  0x00544a                  _getSystemMilis
+                  0x005416                  _initSystem
+                  0x004e72                  _init_EMICfb
+                  0x005424                  _main
                   0x0025e0                  _memcpy
                   0x00088c                  _memset
-                  0x00533e                  _onReset
-                  0x005124                  _poll_EMICfb
-                  0x005024                  _poll_HyT
-                  0x004e68                  _poll_fieldBusTransport
+                  0x005356                  _onReset
+                  0x00513c                  _poll_EMICfb
+                  0x00503c                  _poll_HyT
+                  0x004e84                  _poll_fieldBusTransport
                   0x0041e0                  _scalbnf
                   0x004234                  _scalbnl
                   0x00455e                  _sendDataToStream
-                  0x004ee2                  _send_fbTransport
-                  0x00518a                  _setBusStreamOut
-                  0x0053a4                  _setTime1
+                  0x004f16                  _send_fbTransport
+                  0x0051a2                  _setBusStreamOut
+                  0x0053bc                  _setTime1
                   0x000954                  _snprintf
                   0x002768                  _strcpy
                   0x004c8a                  _streamCloseReadFrame
@@ -724,9 +726,9 @@ External Symbols in Program Memory (by name):
                   0x0009be                  _strtod
                   0x0009b8                  _strtof
                   0x0009c4                  _strtold
-                  0x00544e                  _systemTimeInit
-                  0x0053c0                  _timer1_Poll
-                  0x005458                  _timer4_init
+                  0x005466                  _systemTimeInit
+                  0x0053d8                  _timer1_Poll
+                  0x005470                  _timer4_init
                   0x0027a6                  _tolower
                   0x0032fa                  _toupper
                   0x0027b4                  _vfprintf
@@ -2226,7 +2228,7 @@ __xc_reference_data
                     0xc2ba                  _streamOut_fieldBus
  .const             0xc2be          0x6 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/HyT.o
 
-.text             0x0042c4        0xc70
+.text             0x0042c4        0xc88
  .text            0x0042c4        0x598 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/streamIn.o
                   0x0042c4                  _streamIn_t_ptr_to_float
                   0x004300                  _streamIn_t_ptr_to_char
@@ -2272,55 +2274,56 @@ __xc_reference_data
                   0x004d02                  _dht_start
                   0x004d3c                  _dht_poll
                   0x004ddc                  _dht_diffTime
- .text            0x004e3c         0xf8 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/Transport.o
+ .text            0x004e3c        0x110 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/Transport.o
                   0x004e3c                  _ISR_UART1_CALLBACK
-                  0x004e56                  _init_EMICfb
-                  0x004e68                  _poll_fieldBusTransport
-                  0x004ee2                  _send_fbTransport
-                  0x004f22                  _empty_buffer
+                  0x004e56                  _discard_current_frame
+                  0x004e72                  _init_EMICfb
+                  0x004e84                  _poll_fieldBusTransport
+                  0x004f16                  _send_fbTransport
+                  0x004f3a                  _empty_buffer
 
-.dinit            0x004f34         0xf0
- .dinit           0x004f34         0xf0 data_init
+.dinit            0x004f4c         0xf0
+ .dinit           0x004f4c         0xf0 data_init
 
-.text             0x005024        0x44a
- .text            0x005024         0xe8 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/HyT.o
-                  0x005024                  _poll_HyT
-                  0x0050a2                  _HyT_checksum
-                  0x0050dc                  _HyT_getTemp
-                  0x0050f4                  _HyT_getHum
- .text            0x00510c         0x96 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/EmicFieldBus.o
-                  0x00510c                  _emicFBp
-                  0x005124                  _poll_EMICfb
-                  0x005178                  _getBusStreamIn
-                  0x005182                  _countBusStreamIn
-                  0x00518a                  _setBusStreamOut
-                  0x00519a                  _countBusStreamOut
- .text            0x0051a2         0x86 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/led_Led1.o
-                  0x0051a2                  _LEDs_Led1_init
-                  0x0051aa                  _LEDs_Led1_blink
-                  0x0051ca                  _LEDs_Led1_poll
- .text            0x005228         0x86 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/led_Led2.o
-                  0x005228                  _LEDs_Led2_init
-                  0x005230                  _LEDs_Led2_blink
-                  0x005250                  _LEDs_Led2_poll
- .text            0x0052ae         0x86 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/led_Led3.o
-                  0x0052ae                  _LEDs_Led3_init
-                  0x0052b6                  _LEDs_Led3_blink
-                  0x0052d6                  _LEDs_Led3_poll
- .text            0x005334         0x70 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/userFncFile.o
-                  0x005334                  _SystemConfig
-                  0x00533e                  _onReset
-                  0x005364                  _etOut1
-                  0x00538a                  _emicFBe
- .text            0x0053a4         0x5a /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/timer_api1.o
-                  0x0053a4                  _setTime1
-                  0x0053c0                  _timer1_Poll
- .text            0x0053fe         0x34 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/main.o
-                  0x0053fe                  _initSystem
-                  0x00540c                  _main
- .text            0x005432         0x26 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/systemTimer.o
-                  0x005432                  _getSystemMilis
-                  0x00543c                  _callback
-                  0x00544e                  _systemTimeInit
- .text            0x005458         0x16 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/timer.o
-                  0x005458                  _timer4_init
+.text             0x00503c        0x44a
+ .text            0x00503c         0xe8 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/HyT.o
+                  0x00503c                  _poll_HyT
+                  0x0050ba                  _HyT_checksum
+                  0x0050f4                  _HyT_getTemp
+                  0x00510c                  _HyT_getHum
+ .text            0x005124         0x96 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/EmicFieldBus.o
+                  0x005124                  _emicFBp
+                  0x00513c                  _poll_EMICfb
+                  0x005190                  _getBusStreamIn
+                  0x00519a                  _countBusStreamIn
+                  0x0051a2                  _setBusStreamOut
+                  0x0051b2                  _countBusStreamOut
+ .text            0x0051ba         0x86 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/led_Led1.o
+                  0x0051ba                  _LEDs_Led1_init
+                  0x0051c2                  _LEDs_Led1_blink
+                  0x0051e2                  _LEDs_Led1_poll
+ .text            0x005240         0x86 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/led_Led2.o
+                  0x005240                  _LEDs_Led2_init
+                  0x005248                  _LEDs_Led2_blink
+                  0x005268                  _LEDs_Led2_poll
+ .text            0x0052c6         0x86 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/led_Led3.o
+                  0x0052c6                  _LEDs_Led3_init
+                  0x0052ce                  _LEDs_Led3_blink
+                  0x0052ee                  _LEDs_Led3_poll
+ .text            0x00534c         0x70 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/userFncFile.o
+                  0x00534c                  _SystemConfig
+                  0x005356                  _onReset
+                  0x00537c                  _etOut1
+                  0x0053a2                  _emicFBe
+ .text            0x0053bc         0x5a /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/timer_api1.o
+                  0x0053bc                  _setTime1
+                  0x0053d8                  _timer1_Poll
+ .text            0x005416         0x34 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/main.o
+                  0x005416                  _initSystem
+                  0x005424                  _main
+ .text            0x00544a         0x26 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/systemTimer.o
+                  0x00544a                  _getSystemMilis
+                  0x005454                  _callback
+                  0x005466                  _systemTimeInit
+ .text            0x005470         0x16 /root/Dropbox/EMIC/TARGETS/luciano.rottoli__rfindustrial.com/PruebasModulos/HDR_E-CRYS-B_HYT_1/build/default/production/timer.o
+                  0x005470                  _timer4_init
