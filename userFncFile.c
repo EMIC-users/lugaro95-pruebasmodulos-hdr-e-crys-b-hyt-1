@@ -39,7 +39,7 @@ void etOut1()
 void emicFBe(char* TAG, const streamIn_t* const Message)
 {
     emicFBp("HyT:\tOK");
-    LEDs_Led3_blink(125, 0, );
+    LEDs_Led3_blink(125, 250, 1);
 }
 
 

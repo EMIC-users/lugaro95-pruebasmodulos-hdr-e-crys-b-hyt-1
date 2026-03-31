@@ -58,7 +58,7 @@ void ISR_UART1_CALLBACK(char d)
 {
     UART1_push(&UART1_IN_fifo, d);
 
-    if (d == (char)FrameLf)
+    if (d == FrameLf)
     {
         Transport_frame_count++;
     }
@@ -106,7 +106,7 @@ void poll_fieldBusTransport()
 
                 if (data == My_ID)
                 {
-                	discard_current_frame();   // <-- CAMBIO
+                	
                     if (fieldBusOutStream.frame_count > 0)
                     {
                         send_fbTransport();
@@ -117,6 +117,7 @@ void poll_fieldBusTransport()
                         UART1_OUT_push(FrameLf);
                     }
                 }
+				discard_current_frame();   // <-- CAMBIO
             }
             return;
         }
